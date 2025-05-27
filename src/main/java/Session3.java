@@ -18,15 +18,15 @@ public class Session3 {
 
         while (unsorted) {
             boolean elementsSwitched = false;
-            for (int i = 1; i < hotelRooms.length; i++) {
+            for (int i = 0; i < hotelRooms.length - 1; i++) {
                 int currentElement = hotelRooms[i];//8
-                int previousElement = hotelRooms[i - 1];//1
+                int previousElement = hotelRooms[i + 1];//1
 
                 if (previousElement > currentElement) {
                     elementsSwitched = true;
                     unsorted = true;
                     hotelRooms[i] = previousElement;
-                    hotelRooms[i - 1] = currentElement;
+                    hotelRooms[i + 1] = currentElement;
                 }
 
                 if (!elementsSwitched) {
