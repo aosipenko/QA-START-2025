@@ -16,6 +16,11 @@ public class CarPainter {
             car.color = "red";
         } else {
             car.color = color;
+
         }
+    }
+
+    public void PolishCar(Car2 car) {
+        System.out.println("Polishing" + car.color + "car");
     }
 }
