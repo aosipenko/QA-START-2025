@@ -13,6 +13,8 @@ public class CarService {
         if ("black".equals(newCarColor)) {
             coffeeBreak(sasha);
             vova.prepareCarForPainting(carToPaint);
+            vova.PolishCar(carToPaint);
+
 
             coffeeBreak(vova);
             sasha.paintCar(carToPaint, newCarColor);
@@ -22,10 +24,13 @@ public class CarService {
 
             coffeeBreak(sasha);
             vova.paintCar(carToPaint, newCarColor);
+            vova.PolishCar(carToPaint);
         }
+
     }
 
     private void coffeeBreak(CarPainter carPainter) {
         System.out.println("coffeBreak for " + carPainter.breakDuration);
+
     }
 }
