@@ -92,7 +92,7 @@
                 <version>2.22.2</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/testng-remote.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/testng-allure-remote.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
