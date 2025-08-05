@@ -109,25 +109,29 @@
                 </configuration>
             </plugin>
 
-            <!-- Surefire with AspectJ javaagent -->
+            <!-- ✅ Surefire with TestNG + AspectJ agent -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.version}</version>
                 <configuration>
+                    <!-- Force TestNG mode -->
+                    <testNGArtifactName>org.testng:testng</testNGArtifactName>
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/testng-allure-remote.xml</suiteXmlFile>
                     </suiteXmlFiles>
+                    <!-- Load AspectJ agent for Allure steps -->
                     <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        ${argLine} -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
+
                     <systemPropertyVariables>
                         <allure.results.directory>target/allure-results</allure.results.directory>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
 
-            <!-- Allure Maven plugin for report generation -->
+            <!-- ✅ Allure Maven plugin for report generation -->
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
